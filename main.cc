@@ -2,45 +2,34 @@
 #include <fstream>
 #include <chrono>
 #include <thread>
-using namespace std;
+#include <unistd.h>
+#include <cstdlib>
 
+using namespace std;
 // NOTE TO SELF: need to keep track of chapter/checkpoint save for saving file.
 
-// conditional for defining a sleep function depending on OS
-#ifdef _WIN32
-#include <windows.h>
+#include "chapterone.h"
 
-	void sleep(unsigned milliseconds) {
-		Sleep(milliseconds);
-	}
-
-#else
-#include <unistd.h>
-	
-	void sleep(unsigned milliseconds) {
-		usleep(milliseconds * 1000);
-	}
-#endif
-
-#include <"basicChapter.h">
-#include <"chapterone.h">
+void displayFileContents(string textFile) {
+    string bashScript = "./printFileContents.bash ";
+    bashScript += textFile;
+    system(bashScript.c_str());
+}
 
 int main() {
-	ifstream welcomePage;
-	welcomePage.open("welcome.txt");
-	cout << welcomePage << endl;
-	welcomePage.close();
+    ChapterOne ch1("Chapter One");
+    displayFileContents("welcome.txt");
 
-	char ans;
+    char ans;
 
-	do {
-		cout << "Please press SPACEBAR to start." << endl;
-	}
-	while(getchar() != ' ');
+    do {
+	cout << "Please press ENTER to start." << endl;
+    }
+    while(cin.get() != '\n');
 
-	cout << "Get ready for your adventure." << endl;
-	
-	sleep(5000);
+    cout << "Get ready for your adventure." << endl;
 
-	ChapterOne.intro();
+//    sleep(50);
+
+    ch1.intro("Chapter One");
 }

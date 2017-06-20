@@ -4,18 +4,20 @@ using namespace std;
 class Chapter 
 {
 	public: 
-		~Chapter()=0;
-	protected:
-		string ch;
+		virtual ~Chapter()=0;
+
+		Chapter(string chapterName) : ch(chapterName) { }
 
 		void intro(string chapter)
 		{
 			cout << "====================== " << chapter << " ======================" << endl;
 		}
+	protected:
+		string ch;
 
 		void setChapter(string chapter) 
 		{
 			ch = chapter;
 		}
 
-}
+};
