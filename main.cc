@@ -22,12 +22,9 @@ int main() {
 
     char ans;
 
-    do {
-	cout << "Please press ENTER to start." << endl;
-    }
     while(cin.get() != '\n');
 
-    cout << "Get ready for your adventure." << endl;
+    cout << "Get ready for your adventure.\n" << endl;
 
 //    sleep(50);
 
