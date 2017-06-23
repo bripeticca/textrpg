@@ -32,6 +32,8 @@ int main() {
 
     pr.intro("Prologue");
 
+    displayFileContents("prologuetexts/prologue.txt");
+
     while(cin.get() != '\n');
 
     ch1.intro("Chapter One");

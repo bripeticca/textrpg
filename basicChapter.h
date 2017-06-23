@@ -1,3 +1,5 @@
+#ifndef __BASICCHAPTER__
+#define __BASICCHAPTER__
 #include <iostream>
 using namespace std;
 
@@ -21,3 +23,4 @@ class Chapter
 		}
 
 };
+#endif
