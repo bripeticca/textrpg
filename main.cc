@@ -23,6 +23,7 @@ int main() {
     displayFileContents("welcome.txt");
 
     char ans;
+    string name;
 
     while(cin.get() != '\n');
 
@@ -33,6 +34,20 @@ int main() {
     pr.intro("Prologue");
 
     displayFileContents("prologuetexts/prologue.txt");
+
+    while(cin.get() != '\n');
+
+    displayFileContents("prologuetexts/prologue2.txt");
+
+    while(name == "") {
+	cout << "> ";
+	if(!(cin >> name)) {
+	    cin.clear();
+	    cin.ignore();
+	}
+    }
+
+    cout << endl << name << "..." << endl;
 
     while(cin.get() != '\n');
 
