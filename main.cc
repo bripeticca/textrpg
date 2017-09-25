@@ -11,6 +11,7 @@ using namespace std;
 #include "prologue.h"
 #include "chapterone.h"
 
+// For displaying Chapter texts
 void displayFileContents(string textFile) {
     string bashScript = "./printFileContents.bash ";
     bashScript += textFile;
