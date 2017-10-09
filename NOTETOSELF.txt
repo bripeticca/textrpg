@@ -1,0 +1,6 @@
+Controls:
+
+-add menu option
+-edit name
+-see stats
+-see relationship status (?)
