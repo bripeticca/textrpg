@@ -5,22 +5,22 @@ using namespace std;
 
 class Chapter 
 {
-	public: 
-		virtual ~Chapter()=0;
+    public: 
+	virtual ~Chapter()=0;
 
-		Chapter(string chapterName) : ch(chapterName) { }
+	Chapter(string chapterName) : ch(chapterName) { }
 
-		void intro(string chapter)
-		{
-			cout << "====================== " << chapter << " ======================" << endl;
-		}
-	protected:
-		string ch;
+	void intro(string chapter)
+	{
+	    cout << "====================== " << chapter << " ======================" << endl;
+	}
+    protected:
+	string ch;
 
-		void setChapter(string chapter) 
-		{
-			ch = chapter;
-		}
+	void setChapter(string chapter) 
+	{
+	    ch = chapter;
+	}
 
 };
 #endif
