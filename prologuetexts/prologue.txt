@@ -13,4 +13,4 @@ Nothing. You can't see anything.
 
 ...
 
-====Press ENTER to continue==
+[PRESS ENTER TO CONTINUE]

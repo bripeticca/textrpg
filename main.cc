@@ -30,7 +30,7 @@ int main() {
 
     cout << "Get ready for your adventure.\n" << endl;
 
-    //    sleep(50);
+    std::this_thread::sleep_for(3s);
 
     pr.intro("Prologue");
 
@@ -41,6 +41,7 @@ int main() {
     displayFileContents("prologuetexts/prologue2.txt");
 
     while(name == "") {
+	cout << "[ENTER YOUR NAME]" << endl;
 	cout << "> ";
 	if(!(cin >> name)) {
 	    cin.clear();
@@ -51,6 +52,30 @@ int main() {
     cout << endl << name << "..." << endl;
 
     while(cin.get() != '\n');
+
+    cout << endl;
+
+    cout << "...And the world was silent once more." << endl;
+
+    cout << endl;
+
+    cout << "[PRESS ENTER]" << endl;
+    
+    while(cin.get() != '\n'); 
+    
+    displayFileContents("prologuetexts/prologue3.txt");
+
+    cout << "\"My name is " << name << "...\"" << endl; 
+
+    cout << endl;
+
+
+    // instead of this do a count of how many texts there are ? or make basic function in
+    // different file that does the file displaying??? idk
+
+    // find a way to compartmentalize this
+
+    displayFileContents("prologuetexts/prologue4.txt");
 
     ch1.intro("Chapter One");
 }
