@@ -4,10 +4,12 @@
 #include <thread>
 #include <unistd.h>
 #include <cstdlib>
+#include <cstring>
 
 using namespace std;
 // NOTE TO SELF: need to keep track of chapter/checkpoint save for saving file.
 
+#include "commands.h"
 #include "playerInfo.h"
 #include "prologue.h"
 #include "chapterone.h"
@@ -19,7 +21,23 @@ void displayFileContents(string textFile) {
     system(bashScript.c_str());
 }
 
+bool isValidCommand(string response) 
+{
+    string upperResponse = response;
+    int len = response.length();
+    for(int i = 0; i < len; ++i) 
+    {
+	upperResponse[i] = toupper(response[i]);
+    }
+    auto it = CommandDictionary.find(upperResponse);
+    if(it != CommandDictionary.end())
+	return true;
+    else
+	return false;
+}
+
 int main() {
+    // do a constant check for any commands
     // IF NOT SAVED 
     // Player initialization
     PlayerInfo *player = PlayerInfo::getPlayerInstance();
@@ -30,7 +48,30 @@ int main() {
     ChapterOne ch1;
     displayFileContents("welcome.txt");
 
-    char ans;
+    // do a check for any saved files
+
+    cout << "TYPE START TO [START NEW GAME]" << "	TYPE LOAD TO [LOAD GAME]	" << "TYPE QUIT TO [QUIT]" << endl;
+
+    string response;
+
+    // NOTE TO SELF: MUST BLACKLIST CERTAIN COMMANDS WHEN IN-GAME????
+
+    while(cin >> response) 
+    {
+	if(isValidCommand(response)) 
+	{
+	    cout << "cool" << endl;
+	    break;
+	}
+	else 
+	{
+	    cout << "please enter a valid command" << endl;
+	    // do nothing???
+	}
+    }
+
+
+    char ans; // what is this used for
     string name;
 
     while(cin.get() != '\n');

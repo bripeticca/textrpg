@@ -4,7 +4,6 @@
 #include <iostream>
 #include "pronounBank.h"
 
-using namespace std;
 
 // should be singleton -- only ever want one instance of this in a game
 class PlayerInfo 
