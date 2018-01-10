@@ -4,6 +4,15 @@
 
 class Prologue : public Chapter {
     public:
-    Prologue(string chapter) : Chapter(chapter) { }
+	Prologue() 
+	{ 
+	    chapter = "Prologue";
+	    section = "";
+	}
+
+	void intro() override 
+	{
+	    cout << "====================== " << chapter << section << " ======================" << endl;
+	}
 };
 #endif

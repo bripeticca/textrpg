@@ -8,6 +8,7 @@
 using namespace std;
 // NOTE TO SELF: need to keep track of chapter/checkpoint save for saving file.
 
+#include "playerInfo.h"
 #include "prologue.h"
 #include "chapterone.h"
 
@@ -19,8 +20,14 @@ void displayFileContents(string textFile) {
 }
 
 int main() {
-    Prologue pr("Prologue");
-    ChapterOne ch1("Chapter One");
+    // IF NOT SAVED 
+    // Player initialization
+    PlayerInfo *player = PlayerInfo::getPlayerInstance();
+
+    
+    // Chapters Initialization
+    Prologue pr;
+    ChapterOne ch1;
     displayFileContents("welcome.txt");
 
     char ans;
@@ -32,7 +39,7 @@ int main() {
 
     std::this_thread::sleep_for(3s);
 
-    pr.intro("Prologue");
+    pr.intro();
 
     displayFileContents("prologuetexts/prologue.txt");
 
@@ -48,6 +55,9 @@ int main() {
 	    cin.ignore();
 	}
     }
+
+    // SAVE PLAYER NAME
+
 
     cout << endl << name << "..." << endl;
 
@@ -77,5 +87,9 @@ int main() {
 
     displayFileContents("prologuetexts/prologue4.txt");
 
-    ch1.intro("Chapter One");
+    cout << "[HER/HIM/THEY]" << endl;
+
+    while(cin.get() != '\n');
+
+    ch1.intro();
 }

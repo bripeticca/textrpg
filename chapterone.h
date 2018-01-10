@@ -8,6 +8,10 @@ class Chapter;
 class ChapterOne : public Chapter
 {
     public:
-    ChapterOne(string chapter) : Chapter(chapter) { }
+	ChapterOne() 
+	{
+	    chapter = "1";
+	    section = ".0";
+	}	
 };
 #endif
