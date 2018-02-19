@@ -48,13 +48,19 @@ int main() {
     ChapterOne ch1;
     displayFileContents("welcome.txt");
 
+    cout << "PRESS [ENTER] TO BEGIN" << endl;
+
+    while(cin.get() != '\n');
+
     // do a check for any saved files
 
-    cout << "TYPE START TO [START NEW GAME]" << "	TYPE LOAD TO [LOAD GAME]	" << "TYPE QUIT TO [QUIT]" << endl;
+    cout << "TYPE [START] TO [START NEW GAME]" << endl << "TYPE [LOAD] TO LOAD GAME" << endl << "TYPE [QUIT] TO QUIT" << "TYPE [HELP] FOR MORE COMMANDS" << endl;
 
     string response;
 
     // NOTE TO SELF: MUST BLACKLIST CERTAIN COMMANDS WHEN IN-GAME????
+
+    cout << ">";
 
     while(cin >> response) 
     {
@@ -66,6 +72,7 @@ int main() {
 	else 
 	{
 	    cout << "please enter a valid command" << endl;
+	    cout << ">";
 	    // do nothing???
 	}
     }
@@ -122,7 +129,7 @@ int main() {
 
 
     // instead of this do a count of how many texts there are ? or make basic function in
-    // different file that does the file displaying??? idk
+    // different file that does the file displaying??? idk... do this later or something1
 
     // find a way to compartmentalize this
 

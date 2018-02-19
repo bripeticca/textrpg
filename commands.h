@@ -2,15 +2,6 @@
 #define __COMMANDS_H__
 #include <map>
 
-enum Commands {
-    START,
-    HELP,
-    MENU,
-    SAVE,
-    LOAD,
-    NAME,
-    QUIT
-};
 
 std::map<string, int> CommandDictionary =
 	{ {"START", 0},
